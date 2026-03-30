@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #08090c;
+  --color-surface: #0f1117;
+  --color-surface-2: #161820;
+  --color-surface-3: #1e2029;
+  --color-border: rgba(255, 255, 255, 0.06);
+  --color-border-2: rgba(255, 255, 255, 0.1);
+  --color-text: #e8e6e0;
+  --color-muted: #6b6a66;
+  --color-soft: #a8a6a0;
+  --color-accent: #f0b429;
+  --color-accent-2: #3b82f6;
+  --color-green: #22c55e;
+  --color-red: #ef4444;
+}
+
+@font-face {
+  font-family: 'Syne';
+  font-display: swap;
+  src: url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&display=swap');
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: 'Syne', system-ui, sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}

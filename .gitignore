@@ -1,0 +1,23 @@
+node_modules/
+dist/
+
+# Database and uploaded files
+server/data/crm.db
+server/data/videos/
+server/data/thumbnails/
+server/data/assets/
+
+# Environment
+.env
+.env.local
+
+# OS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Old monolith backup
+files.zip
+files/data/crm.db
