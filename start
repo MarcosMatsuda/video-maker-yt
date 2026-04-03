@@ -1,0 +1,33 @@
+#!/bin/bash
+# ═══════════════════════════════════════════
+# Cripto News Video Maker - Start script
+# Server + Web (concurrently)
+# ═══════════════════════════════════════════
+
+echo ""
+echo "📰 Cripto News Video Maker — Starting..."
+echo ""
+
+# Kill existing processes
+for port in 3002 5174; do
+  pid=$(lsof -ti:$port 2>/dev/null)
+  if [ -n "$pid" ]; then
+    kill -9 $pid 2>/dev/null
+    echo "   🔪 Killed process on port $port"
+  fi
+done
+
+sleep 1
+
+# ─── Check ffmpeg ────────────────────────
+if which ffmpeg > /dev/null 2>&1; then
+  echo "   ✅ ffmpeg installed"
+else
+  echo "   ❌ ffmpeg not found — run: brew install ffmpeg"
+fi
+
+echo ""
+echo "   Starting server + web..."
+echo ""
+
+npm run dev

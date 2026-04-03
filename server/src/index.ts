@@ -9,7 +9,7 @@ import montagemRouter from './routes/montagem';
 import legendaRouter from './routes/legenda';
 
 const app = express();
-const PORT = 3333;
+const PORT = parseInt(process.env.PORT || '3002', 10);
 
 app.use(cors());
 app.use(express.json({ limit: '10mb' }));
