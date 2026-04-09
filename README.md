@@ -1,23 +1,23 @@
-# Cripto News Video Maker
+# Video Maker YT
 
-Plataforma automatizada para criação de vídeos de notícias sobre criptomoedas para YouTube. Gera roteiros, voiceovers com avatar IA (HeyGen), legendas, thumbnails e montagem final de vídeo.
+Automated platform for creating cryptocurrency news videos for YouTube. Generates scripts, AI avatar voiceovers (HeyGen), subtitles, thumbnails, and final video composition.
 
 ## Stack
 
 - **Backend:** Express.js + TypeScript + SQLite (better-sqlite3)
 - **Frontend:** React 19 + Vite + TailwindCSS + TypeScript
-- **Vídeo:** FFmpeg para processamento e montagem
-- **IA:** HeyGen (avatar/voiceover) + OpenAI (DALL-E para thumbnails)
+- **Video:** FFmpeg for processing and composition
+- **AI:** HeyGen (avatar/voiceover) + OpenAI (DALL-E for thumbnails)
 - **Monorepo:** npm workspaces (`server/` + `web/`)
 
-## Pré-requisitos
+## Prerequisites
 
 - [Node.js](https://nodejs.org/) 18+
-- [FFmpeg](https://ffmpeg.org/) instalado (`brew install ffmpeg` no macOS)
-- Chave de API do [HeyGen](https://heygen.com/)
-- Chave de API da [OpenAI](https://platform.openai.com/) (para geração de thumbnails com DALL-E)
+- [FFmpeg](https://ffmpeg.org/) installed (`brew install ffmpeg` on macOS)
+- [HeyGen](https://heygen.com/) API key
+- [OpenAI](https://platform.openai.com/) API key (for DALL-E thumbnail generation)
 
-## Instalação
+## Installation
 
 ```bash
 git clone https://github.com/MarcosMatsuda/video-maker-yt.git
@@ -25,52 +25,52 @@ cd video-maker-yt
 npm install
 ```
 
-## Configuração
+## Configuration
 
-As chaves de API são configuradas diretamente na interface web em **Configurações**. Não é necessário arquivo `.env`.
+API keys are configured directly in the web interface under **Settings**. No `.env` file required.
 
-| Configuração | Onde obter |
-|-------------|-----------|
+| Setting | Where to get |
+|---------|-------------|
 | HeyGen API Key | [heygen.com](https://heygen.com/) |
 | OpenAI API Key | [platform.openai.com](https://platform.openai.com/) |
-| HeyGen Avatar ID | Painel do HeyGen |
-| Nome do Canal | Seu canal do YouTube |
+| HeyGen Avatar ID | HeyGen dashboard |
+| Channel Name | Your YouTube channel |
 
-## Uso
+## Usage
 
 ```bash
-# Iniciar em modo desenvolvimento (server + web)
+# Start in development mode (server + web)
 npm run dev
 
-# Ou usar o start script
+# Or use the start script
 ./start
 ```
 
 - **Server:** http://localhost:3002
 - **Web:** http://localhost:5174
 
-### Fluxo de criação de vídeo
+### Video Creation Workflow
 
-1. **Buscar notícias** — busca as últimas notícias de criptomoedas
-2. **Criar roteiro** — edita e refina o script do vídeo
-3. **Gerar voiceover** — cria narração com avatar IA via HeyGen
-4. **Gerar legendas** — cria legendas sincronizadas automaticamente
-5. **Montar vídeo** — combina áudio, vídeo do avatar, legendas e assets
-6. **Publicar** — exporta o vídeo final pronto para upload no YouTube
+1. **Fetch news** — pull the latest cryptocurrency news
+2. **Create script** — edit and refine the video script
+3. **Generate voiceover** — create narration with AI avatar via HeyGen
+4. **Generate subtitles** — auto-generate synced captions
+5. **Compose video** — combine audio, avatar video, subtitles, and assets
+6. **Publish** — export the final video ready for YouTube upload
 
 ## API
 
-| Endpoint | Descrição |
-|----------|-----------|
-| `GET /api/videos` | Listar vídeos |
-| `POST /api/videos` | Criar vídeo |
-| `POST /api/upload` | Upload de arquivos |
-| `POST /api/news` | Buscar notícias |
-| `POST /api/montagem` | Montar vídeo final |
-| `POST /api/legenda` | Gerar legendas |
-| `GET /api/config` | Configurações |
+| Endpoint | Description |
+|----------|-------------|
+| `GET /api/videos` | List videos |
+| `POST /api/videos` | Create video |
+| `POST /api/upload` | Upload files |
+| `POST /api/news` | Fetch news |
+| `POST /api/montagem` | Compose final video |
+| `POST /api/legenda` | Generate subtitles |
+| `GET /api/config` | Settings |
 
-## Estrutura
+## Project Structure
 
 ```
 ├── server/           # Express API + SQLite
@@ -78,16 +78,16 @@ npm run dev
 │   │   ├── index.ts  # Entry point
 │   │   ├── database.ts
 │   │   └── routes/
-│   └── data/         # DB + arquivos gerados (gitignored)
+│   └── data/         # DB + generated files (gitignored)
 ├── web/              # React frontend
 │   ├── src/
 │   │   ├── pages/
 │   │   └── components/
 │   └── vite.config.ts
-├── start             # Script de inicialização
+├── start             # Startup script
 └── package.json      # Workspace root
 ```
 
-## Licença
+## License
 
 MIT
