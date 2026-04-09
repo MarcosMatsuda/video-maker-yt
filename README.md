@@ -7,13 +7,17 @@ Automated platform for creating cryptocurrency news videos for YouTube. Generate
 - **Backend:** Express.js + TypeScript + SQLite (better-sqlite3)
 - **Frontend:** React 19 + Vite + TailwindCSS + TypeScript
 - **Video:** FFmpeg for processing and composition
-- **AI:** HeyGen (avatar/voiceover) + OpenAI (DALL-E for thumbnails)
+- **AI:**
+  - [HeyGen](https://heygen.com/) — AI avatar video generation and voiceover
+  - [OpenAI DALL-E](https://platform.openai.com/) — thumbnail image generation
+  - [OpenAI Whisper](https://github.com/openai/whisper) — speech-to-text for automatic subtitle generation (local CLI)
 - **Monorepo:** npm workspaces (`server/` + `web/`)
 
 ## Prerequisites
 
 - [Node.js](https://nodejs.org/) 18+
 - [FFmpeg](https://ffmpeg.org/) installed (`brew install ffmpeg` on macOS)
+- [OpenAI Whisper](https://github.com/openai/whisper) installed (`pip install openai-whisper` for subtitle generation)
 - [HeyGen](https://heygen.com/) API key
 - [OpenAI](https://platform.openai.com/) API key (for DALL-E thumbnail generation)
 
