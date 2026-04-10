@@ -21,3 +21,6 @@ server/data/assets/
 # Old monolith backup
 files.zip
 files/data/crm.db
+
+# Local-only architecture doc (never committed)
+CLAUDE.md
